@@ -4,3 +4,5 @@
 
 - [Лабораторная работа №1](https://github.com/egor-yanin/ITMO-clouds/blob/main/lab1/readme.md)
 - [Лабораторная работа №1*](https://github.com/egor-yanin/ITMO-clouds/blob/main/Lab1*/README.md)
+- [Облачная лабораторная работа №1](https://github.com/egor-yanin/ITMO-clouds/blob/main/cloud-lab1/README.md)
+- [Девопс-кейс №1](https://github.com/inview-club/devops-cases/pull/29)
