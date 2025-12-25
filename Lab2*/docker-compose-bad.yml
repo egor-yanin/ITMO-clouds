@@ -11,7 +11,8 @@ services:
       # Плохая практика #2: Секреты в открытом виде
       DB_PASSWORD: mySuperSecretPassword123
     user: root # Плохая практика #3: Запуск от root
-    restart: unless-stopped
+    networks:
+      - web_net
     depends_on:
       - db
 
