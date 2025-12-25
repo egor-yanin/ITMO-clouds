@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  web:
+    image: nginx:latest # Плохая практика 1: Использование тега 'latest'
+    volumes:
+      - ./html:/usr/share/nginx/html.ro
+    ports:
+      - "8081:80"
+    environment:
+      # Плохая практика #2: Секреты в открытом виде
+      DB_PASSWORD: mySuperSecretPassword123
+    user: root # Плохая практика #3: Запуск от root
+    restart: unless-stopped
+    depends_on:
+      - db
+
+db:
+    image: postgres:latest      # Плохая практика 1 снова: latest
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: testdb
+    volumes:
+      - ./data:/var/lib/postgresql
