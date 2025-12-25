@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  web:
+    image: nginx:1.25.4  #Заменили 'latest'
+    volumes:
+      - ./html:/usr/share/nginx/html:ro
+      - ./nginx_cache:/var/cache/nginx
+    ports:
+      - "8081:80"
+    environment:
+      # Нет открытых сектретов, все объявляется неявно
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    # Запуск от root убрали
+    networks:
+      - web_net
+    depends_on:
+      - db
+
+  db:
+    image: postgres:16.2          #Заменили 'latest'
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - ./data:/var/lib/postgresql
+    networks:
+      - db_net
+
+# Сети для изоляции контейнеров
+networks:
+  web_net:
+    driver: bridge
+  db_net:
+    driver: bridge
