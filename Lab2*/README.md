@@ -35,6 +35,25 @@
 и не могут обращаться друг к другу. Это происходит потому что каждый мост (bridge) представляет собой отдельный виртуальный коммутатор, и контейнеры, 
 подключённые к разным сетям, получают IP-адреса из разных подсетей и соответсвенно не имеют связи
 
+## Проверка:
+
+<img width="1875" height="738" alt="511496002-4dc1bfe8-a07b-42b2-9b1a-d4cbea8f0a08" src="https://github.com/user-attachments/assets/a28a6843-df89-4fd2-bb73-acaf34cef58d" />
+
+При плохом Compose все запускается
+
+<img width="1238" height="66" alt="Снимок экрана 2025-12-25 234315" src="https://github.com/user-attachments/assets/8708c83b-e137-470e-a788-3d40f3270bba" />
+
+И при хорошем тоже 
+
+<img width="1260" height="436" alt="Снимок экрана 2025-12-25 234637" src="https://github.com/user-attachments/assets/8a91a4fd-525f-498f-8cf4-cf88baafb8c2" />
+
+<img width="1213" height="66" alt="Снимок экрана 2025-12-25 235031" src="https://github.com/user-attachments/assets/4d3427bc-6fd7-404e-aa89-05ec3e823c22" />
+
+И изоляция работает
+
+<img width="1117" height="103" alt="Снимок экрана 2025-12-25 235543" src="https://github.com/user-attachments/assets/374ea66c-abeb-43e4-9086-54981913dd43" />
+
+
 # Вывод
 
 Мы научились использовать Docker Compose в целом и главное можем делать это безопасно для наших данных.
